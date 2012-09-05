@@ -1,6 +1,7 @@
 var blammo = require('./');
 
 function main() {
+    var root = blammo.LoggerFactory.getLogger(blammo.Logger.ROOT_LOGGER_NAME);
     var logger1 = blammo.LoggerFactory.getLogger('logger1');
     var logger2 = blammo.LoggerFactory.getLogger('logger2');
 

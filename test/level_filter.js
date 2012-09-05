@@ -5,7 +5,7 @@ var assert = require('assert');
 describe('LevelFilter', function() {
     describe('#decide()',  function() {
         it('should reply neutral when the log level is not equal to the set level', function() {
-            var filter = new blammo.LevelFilter(blammo.Levels.TRACE);
+            var filter = new blammo.LevelFilter('TRACE');
             var le = new blammo.LoggingEvent('test', blammo.Levels.DEBUG, 'dummy message');
 
             var r = filter.decide(le);
@@ -14,7 +14,7 @@ describe('LevelFilter', function() {
         });
 
         it('should reply accept when the log level is equal to the set level', function() {
-            var filter = new blammo.LevelFilter(blammo.Levels.WARN);
+            var filter = new blammo.LevelFilter('WARN');
             var le = new blammo.LoggingEvent('test', blammo.Levels.WARN, 'dummy message');
 
             var r = filter.decide(le);

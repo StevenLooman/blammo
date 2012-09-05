@@ -9,7 +9,7 @@
 		<layout type="pattern_layout">%timestamp|%pid|%logger|%level|%message</layout>
 
 		<filters>
-			<filter type="threshold_filter">DEBUG</filter>
+			<filter type="threshold_filter">WARN</filter>
 		</filters>
 
 		<config>
@@ -30,7 +30,7 @@
 		<appender-ref ref="console" />
 	</logger>
 
-	<root level="warn">
+	<root level="trace">
 		<appender-ref ref="file_pattern" />
 		<appender-ref ref="file_json" />
 	</root>
