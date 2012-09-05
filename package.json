@@ -1,0 +1,36 @@
+{
+    "name": "blammo",
+    "description": "Blammo! Logger for NodeJS - built after LogBack for Java",
+    "version": "0.4.0",
+    "author": "Steven Looman <steven.looman@gmail.com>",
+    "keywords": [ "logger", "logging", "log" ],
+    "licenses" : [
+        {
+            "type": "2-clause BSD",
+            "url": "https://raw.github.com/StevenLooman/blammo/master/LICENSE"
+        }
+    ],
+
+    "dependencies": {
+    	"xmldom": "0.1.11"
+    },
+    "devDependencies": {
+        "mocha": "1.2.2",
+	"mocha-lcov-reporter": "0.0.1"
+    },
+    "directories": {
+        "lib": "./lib",
+        "test": "./test"
+    },
+    "main": "index.js",
+    "engines": {
+        "node": ">= 0.6.0"
+    },
+    "scripts": {
+        "test": "mocha test/*"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/StevenLooman/blammo.git"
+    }
+}

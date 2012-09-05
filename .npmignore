@@ -1,0 +1,5 @@
+node_modules/
+run_sonar.hs
+sonar-runner.properties
+coverage
+.sonar
