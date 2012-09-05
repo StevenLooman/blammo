@@ -8,6 +8,10 @@
 		<encoder type="dummy_encoder"/>
 		<layout type="pattern_layout">%timestamp|%pid|%logger|%level|%message</layout>
 
+		<filters>
+			<filter type="threshold_filter">DEBUG</filter>
+		</filters>
+
 		<config>
 			<filename>/tmp/blammo.log</filename>
 		</config>
