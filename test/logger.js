@@ -184,5 +184,63 @@ describe('Logger', function() {
             assert.ok(appenders.length === 0);
         });
     });
+
+    describe('auto tracing', function() {
+        it('should give a TRACE log message on entry', function() {
+            function T() {}
+            T.prototype.f1 = function(p1, p2) {
+            };
+            var t = new T();
+
+            var logger = new blammo.Logger('test');
+            var appender = new TestAppender();
+            logger.addAppender(appender);
+            logger.setLevel(blammo.Levels.TRACE);
+            blammo.Logger.traceEntry(logger, t, 'f1');
+
+            t.f1();
+
+            assert.ok(appender.events.length === 1);
+            assert.ok(appender.events[0].message === '--> T.f1()');
+        });
+
+        it('should give a TRACE log message on exit', function() {
+            function T() {}
+            T.prototype.f1 = function(p1, p2) {
+            };
+            var t = new T();
+
+            var logger = new blammo.Logger('test');
+            var appender = new TestAppender();
+            logger.addAppender(appender);
+            logger.setLevel(blammo.Levels.TRACE);
+            blammo.Logger.traceExit(logger, t, 'f1');
+
+            t.f1();
+
+            assert.ok(appender.events.length === 1);
+            assert.ok(appender.events[0].message === '<-- T.f1()');
+        });
+
+        it('should give a TRACE log message on entry and exit', function() {
+            function T() {}
+            T.prototype.f1 = function(p1, p2) {
+            };
+            var t = new T();
+
+            var logger = new blammo.Logger('test');
+            var appender = new TestAppender();
+            logger.addAppender(appender);
+            logger.setLevel(blammo.Levels.TRACE);
+            blammo.Logger.traceEntry(logger, t, 'f1');
+            blammo.Logger.traceExit(logger, t, 'f1');
+
+            t.f1();
+
+            assert.ok(appender.events.length === 2);
+            assert.ok(appender.events[0].message === '--> T.f1()');
+            assert.ok(appender.events[1].message === '<-- T.f1()');
+        });
+    });
 });
 
