@@ -1,0 +1,26 @@
+<configuration>
+	<appender name="console" type="console_appender">
+		<encoder type="dummy_encoder"/>
+		<layout type="pattern_layout">%timestamp|%pid|%logger|%level|%message</layout>
+	</appender>
+
+	<appender name="mongodb" type="mongodb_appender">
+		<encoder type="dummy_encoder"/>
+		<layout type="dummy_layout" />
+
+		<config>
+			<hostname>localhost</hostname>
+			<port>27017</port>
+			<database>blammo</database>
+			<collection>log</collection>
+		</config>
+	</appender>
+
+	<logger name="logger1">
+		<appender-ref ref="console" />
+		<appender-ref ref="mongodb" />
+	</logger>
+
+	<root level="trace">
+	</root>
+</configuration>
