@@ -14,7 +14,7 @@ TestAppender.prototype.getName = function() {
 };
 
 
-TestAppender.prototype.doAppend = function(e) {
+TestAppender.prototype.append = function(e) {
     this.events.push(e);
 };
 

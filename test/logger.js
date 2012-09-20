@@ -188,8 +188,7 @@ describe('Logger', function() {
     describe('auto tracing', function() {
         it('should give a TRACE log message on entry', function() {
             function T() {}
-            T.prototype.f1 = function(p1, p2) {
-            };
+            T.prototype.f1 = function(p1, p2) { };
             var t = new T();
 
             var logger = new blammo.Logger('test');
@@ -206,8 +205,7 @@ describe('Logger', function() {
 
         it('should give a TRACE log message on exit', function() {
             function T() {}
-            T.prototype.f1 = function(p1, p2) {
-            };
+            T.prototype.f1 = function(p1, p2) { };
             var t = new T();
 
             var logger = new blammo.Logger('test');
@@ -224,8 +222,7 @@ describe('Logger', function() {
 
         it('should give a TRACE log message on entry and exit', function() {
             function T() {}
-            T.prototype.f1 = function(p1, p2) {
-            };
+            T.prototype.f1 = function(p1, p2) { };
             var t = new T();
 
             var logger = new blammo.Logger('test');
@@ -243,4 +240,3 @@ describe('Logger', function() {
         });
     });
 });
-
