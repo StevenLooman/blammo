@@ -4,7 +4,7 @@
 		<layout type="pattern_layout">%timestamp|%pid|%logger|%level|%message</layout>
 
 		<config>
-			<colorize>1</colorize>
+			<colorize>0</colorize>
 		</config>
 	</appender>
 
