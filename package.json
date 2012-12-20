@@ -12,7 +12,8 @@
     ],
 
     "dependencies": {
-    	"xmldom": "0.1.11"
+        "xmldom": "0.1.11",
+        "cli-color": "0.2.1"
     },
     "devDependencies": {
         "mocha": "1.5.0",
