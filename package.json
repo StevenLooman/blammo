@@ -1,7 +1,7 @@
 {
     "name": "blammo",
     "description": "Blammo! Logger for NodeJS - built after LogBack for Java",
-    "version": "0.4.5",
+    "version": "0.4.6-dev",
     "author": "Steven Looman <steven.looman@gmail.com>",
     "keywords": [ "logger", "logging", "log", "blammo" ],
     "licenses" : [
