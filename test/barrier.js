@@ -1,4 +1,4 @@
-var blammo = require('..');
+var blammo = process.env.JS_COV ? require('../lib-cov') : require('../lib');
 var assert = require('assert');
 
 describe('Barrier', function() {
